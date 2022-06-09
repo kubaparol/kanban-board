@@ -6,13 +6,13 @@ import Button from '../Button';
 import { MoveContext, DeleteContext } from '../../context';
 
 const Task = function (props) {
-    const { id, taskName, user, description, idColumn } = props;
+    const { className, id, taskName, user, description, idColumn } = props;
 
     const moveTask = useContext(MoveContext);
     const deleteTask = useContext(DeleteContext);
 
     return (
-        <li className={classes.root} key={id}>
+        <li className={`${classes.root}${className ? ` ${className}` : ''}`} key={id}>
             <header>
                 <h3>{taskName}</h3>
             </header>

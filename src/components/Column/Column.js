@@ -5,7 +5,7 @@ import classes from './Column.module.css';
 import Task from '../Task';
 
 const Column = function (props) {
-    const { id, name, limit, tasksList } = props;
+    const { className, id, name, limit, tasksList } = props;
 
     const renderTasks = tasksList.map((task) =>
         task.idColumn === id ? (
@@ -23,7 +23,7 @@ const Column = function (props) {
     const currTasksQuantity = tasksList.filter((task) => task.idColumn === id).length;
 
     return (
-        <li className={classes.root} key={id}>
+        <li className={`${classes.root}${className ? ` ${className}` : ''}`} key={id}>
             <header>
                 <h2>{name}</h2>
                 <p>

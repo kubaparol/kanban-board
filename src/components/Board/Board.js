@@ -5,14 +5,14 @@ import classes from './Board.module.css';
 import Column from '../Column';
 
 const Board = function (props) {
-    const { columns, tasksList } = props;
+    const { className, columns, tasksList } = props;
 
     const renderColumns = columns.map((column) => (
         <Column id={column.id} name={column.name} limit={column.limit} tasksList={tasksList} />
     ));
 
     return (
-        <section className={classes.root}>
+        <section className={`${classes.root}${className ? ` ${className}` : ''}`}>
             <ul>{renderColumns}</ul>
         </section>
     );
