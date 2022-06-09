@@ -17,3 +17,13 @@ export const useStorage = () => {
 
     return [getItem, setItem];
 };
+
+
+export const useValidation = () => {
+    const [alert, setAlert] = useState('');
+
+    return {
+        alert,
+        displayMessage: (message) => setAlert(message),
+    };
+};
