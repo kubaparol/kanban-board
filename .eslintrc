@@ -8,7 +8,9 @@
         "indent": ["error", 4],
         "react/jsx-indent": ["error", 4],
         "react/jsx-indent-props": ["error", 4],
-        "func-names": ["error", "as-needed"]
+        "react/jsx-no-constructed-context-values": "off",
+        "func-names": ["error", "as-needed"],
+        "react/prop-types": 0
     },
     "globals": {
         "window": true,

@@ -3,17 +3,17 @@ import React from 'react';
 import classes from './Board.module.css';
 
 import Column from '../Column';
-import SplitColumn from '../SplitColumn';
 
-const Board = function () {
+const Board = function (props) {
+    const { columns, tasksList } = props;
+
+    const renderColumns = columns.map((column) => (
+        <Column id={column.id} name={column.name} limit={column.limit} tasksList={tasksList} />
+    ));
+
     return (
         <section className={classes.root}>
-            <h2>Board</h2>
-            <Column />
-            <SplitColumn />
-            <SplitColumn />
-            <Column />
-            <Column />
+            <ul>{renderColumns}</ul>
         </section>
     );
 };

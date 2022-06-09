@@ -2,11 +2,36 @@ import React from 'react';
 
 import classes from './Column.module.css';
 
-const Column = function () {
+import Task from '../Task';
+
+const Column = function (props) {
+    const { id, name, limit, tasksList } = props;
+
+    const renderTasks = tasksList.map((task) =>
+        task.idColumn === id ? (
+            <Task
+                id={task.id}
+                taskName={task.taskName}
+                key={task.id}
+                user={task.user}
+                description={task.description}
+                idColumn={task.idColumn}
+            />
+        ) : null,
+    );
+
+    const currTasksQuantity = tasksList.filter((task) => task.idColumn === id).length;
+
     return (
-        <article className={classes.root}>
-            <h2>Column</h2>
-        </article>
+        <li className={classes.root} key={id}>
+            <header>
+                <h2>{name}</h2>
+                <p>
+                    {currTasksQuantity}/{limit}
+                </p>
+            </header>
+            <ul>{renderTasks}</ul>
+        </li>
     );
 };
 
