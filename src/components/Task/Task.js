@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 
 import classes from './Task.module.css';
 
+import Button from '../Button';
 import { MoveContext, DeleteContext } from '../../context';
 
 const Task = function (props) {
@@ -17,15 +18,9 @@ const Task = function (props) {
             </header>
             <p>{user}</p>
             <p>{description}</p>
-            <button type="button" id="next" onClick={(e) => moveTask(e, id, idColumn)}>
-                Next
-            </button>
-            <button type="button" id="prev" onClick={(e) => moveTask(e, id, idColumn)}>
-                Prev
-            </button>
-            <button type="button" id="delete" onClick={() => deleteTask(id)}>
-                Delete
-            </button>
+            <Button id="next" onClick={(e) => moveTask(e, id, idColumn)} text="Dalej" />
+            <Button id="prev" onClick={(e) => moveTask(e, id, idColumn)} text="Wstecz" />
+            <Button id="delete" onClick={() => deleteTask(id)} text="Usuń" />
         </li>
     );
 };
