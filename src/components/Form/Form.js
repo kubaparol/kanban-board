@@ -4,6 +4,8 @@ import { useChangeHandler } from '../../hooks';
 
 import classes from './Form.module.css';
 
+import TextField from '../TextField';
+
 const Form = function (props) {
     const { className, getTask } = props;
     const { value: taskName, onChange: onChangeTaskName, clear: taskNameInputClear } = useChangeHandler();
@@ -30,9 +32,9 @@ const Form = function (props) {
 
     return (
         <form onSubmit={addTask} className={`${classes.root}${className ? ` ${className}` : ''}`}>
-            <input type="text" name="task" value={taskName} onChange={onChangeTaskName} />
-            <input type="text" name="user" value={user} onChange={onChangeUser} />
-            <input type="text" name="description" value={description} onChange={onChangeDescription} />
+            <TextField name="task" value={taskName} onChange={onChangeTaskName} />
+            <TextField name="user" value={user} onChange={onChangeUser} />
+            <TextField name="description" value={description} onChange={onChangeDescription} />
             <input type="submit" value="add" />
         </form>
     );
