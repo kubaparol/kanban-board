@@ -1,3 +1,79 @@
 .root {
-    border: 2px solid green
+    margin: 15px auto;
+    border-radius: 17px;
+    padding: 10px 20px;
+    background-color: #FFFFFF;
+    box-shadow: 0 0 10px 2px #a0a3bd;
+    overflow: hidden;
+}
+
+.title, .description, .user {
+    width: auto;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+ }
+
+.header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.title {
+    color: #35306E;
+    margin-left: 20px;
+    font-size: 1.3rem;
+}
+
+.description {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+}
+
+.user__container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.user {
+    opacity: 0.9;
+}
+
+.user__circle {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background-color: #d0d2eb;
+    margin-right: 10px;
+    color: #6D77FB;
+    font-weight: bold;
+    text-align: center;
+    line-height: 23px;
+}
+
+.buttons__container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.icon__next, .icon__prev, .icon__delete {
+    font-size: 1.2rem;
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.icon__next, .icon__prev {
+    background-color: #FFF5E0;
+    color: #eeb239
+}
+
+.icon__delete {
+    background-color: #FFE5E5;
+    color: #f36161;
 }

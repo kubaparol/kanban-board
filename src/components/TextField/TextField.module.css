@@ -1,3 +1,22 @@
 .root {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.2rem;
+}
+
+.input {
     height: 35px;
+    margin-top: 15px;
+    outline: none;
+    border: none;
+    padding: 1px 10px;
+    font-size: 1.05rem;
+    box-shadow: 0 0 5px 1px #dbe0df;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.input:focus {
+    border: 1px solid black;
+    box-shadow: 0 0 3px 1px #a0b6b1;
 }

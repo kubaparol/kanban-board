@@ -2,5 +2,23 @@
     display: flex;
     flex-direction: column;
     width: 70%;
+    max-width: 400px;
     margin: 0 auto;
+}
+
+.submit {
+    background-color: #c0f5e2;
+    border-radius: 10px;
+    border: none;
+    width: 40%;
+    margin: 10px auto;
+    padding: 10px 20px;
+    font-size: 1rem;
+    box-shadow: 0 0 5px 1px #dbe0df;
+}
+
+.alert {
+    text-align: center;
+    color: rgb(243, 95, 95);
+    margin-bottom: 5px;
 }

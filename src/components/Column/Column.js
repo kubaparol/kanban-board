@@ -1,4 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 
 import classes from './Column.module.css';
 
@@ -6,6 +9,7 @@ import Task from '../Task';
 
 const Column = function (props) {
     const { className, id, name, limit, tasksList } = props;
+    const [isOpen, setIsOpen] = useState(false);
 
     const renderTasks = tasksList.map((task) =>
         task.idColumn === id ? (
@@ -24,13 +28,18 @@ const Column = function (props) {
 
     return (
         <li className={`${classes.root}${className ? ` ${className}` : ''}`} key={id}>
-            <header>
-                <h2>{name}</h2>
-                <p>
+            <header className={classes.header}>
+                <h2 className={classes.title}>{name}</h2>
+                <p className={classes.limit}>
                     {currTasksQuantity}/{limit}
                 </p>
+                <FontAwesomeIcon
+                    icon={isOpen === true && currTasksQuantity !== 0 ? faChevronUp : faChevronDown}
+                    className={classes.arrow}
+                    onClick={() => (isOpen === false && currTasksQuantity !== 0 ? setIsOpen(true) : setIsOpen(false))}
+                />
             </header>
-            <ul>{renderTasks}</ul>
+            {isOpen === true ? <ul className={classes.tasks}>{renderTasks}</ul> : null}
         </li>
     );
 };

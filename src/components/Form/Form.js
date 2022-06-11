@@ -24,14 +24,14 @@ const Form = function (props) {
         const rules = [
             {
                 name: taskName,
-                minLength: 2,
+                minLength: 3,
                 message: 'Task name must be min. 3 characters long',
                 setStateFn: setTaskNameAlert,
             },
             {
                 name: user,
-                minLength: 2,
-                message: 'Username must be min. 3 characters long',
+                minLength: 3,
+                message: 'Your name must be min. 3 characters long',
                 setStateFn: setUserAlert,
             },
             {
@@ -44,7 +44,7 @@ const Form = function (props) {
 
         rules.forEach((rule) => {
             const { name, minLength, setStateFn, message } = rule;
-            if (name < minLength) {
+            if (name.length < minLength) {
                 displayAlert(setStateFn, message);
             } else displayAlert(setStateFn, '');
         });
@@ -55,7 +55,7 @@ const Form = function (props) {
 
         formValidation();
 
-        if (taskName && user && description) {
+        if (taskName.length >= 3 && user.length >= 3 && description.length >= 5) {
             const newTask = {
                 id: uuid(),
                 idColumn: 1,
@@ -74,13 +74,13 @@ const Form = function (props) {
 
     return (
         <form onSubmit={addTask} className={`${classes.root}${className ? ` ${className}` : ''}`}>
-            <TextField name="task" value={taskName} onChange={onChangeTaskName} />
-            <span>{taskNameAlert}</span>
-            <TextField name="user" value={user} onChange={onChangeUser} />
-            <span>{userAlert}</span>
-            <TextField name="description" value={description} onChange={onChangeDescription} />
-            <span>{descriptionAlert}</span>
-            <input type="submit" value="add" />
+            <TextField name="task" value={taskName} onChange={onChangeTaskName} text="Task:" />
+            <span className={classes.alert}>{taskNameAlert}</span>
+            <TextField name="description" value={description} onChange={onChangeDescription} text="Description:" />
+            <span className={classes.alert}>{descriptionAlert}</span>
+            <TextField name="user" value={user} onChange={onChangeUser} text="Your name:" />
+            <span className={classes.alert}>{userAlert}</span>
+            <input type="submit" value="Add" className={classes.submit} />
         </form>
     );
 };

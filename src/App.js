@@ -16,7 +16,7 @@ function App() {
         { id: 2, name: 'Analysis', limit: 3 },
         { id: 3, name: 'Development', limit: 5 },
         { id: 4, name: 'Test', limit: 3 },
-        { id: 5, name: 'Dending', limit: 5 },
+        { id: 5, name: 'Deploy', limit: 5 },
     ];
 
     useEffect(() => {
@@ -33,7 +33,7 @@ function App() {
     };
 
     const moveTask = (e, id, idColumn) => {
-        const button = e.target.id;
+        const button = e.currentTarget.id;
         const [currentTask] = tasks.filter((task) => task.id === id);
 
         const nextOrPrevColumn =
@@ -70,14 +70,16 @@ function App() {
     return (
         <main>
             <header className="header">
-                <h1 className="header__title">Board App</h1>
+                <h1 className="header__title">Team Board</h1>
             </header>
-            <MoveContext.Provider value={moveTask}>
-                <DeleteContext.Provider value={deleteTask}>
-                    <Board columns={columns} tasksList={tasks} />
-                </DeleteContext.Provider>
-            </MoveContext.Provider>
-            <Form getTask={getTask} />
+            <section className="kanban">
+                <MoveContext.Provider value={moveTask}>
+                    <DeleteContext.Provider value={deleteTask}>
+                        <Board columns={columns} tasksList={tasks} />
+                    </DeleteContext.Provider>
+                </MoveContext.Provider>
+                <Form getTask={getTask} />
+            </section>
         </main>
     );
 }

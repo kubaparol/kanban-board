@@ -3,16 +3,14 @@ import React from 'react';
 import classes from './TextField.module.css';
 
 const TextField = function (props) {
-    const { className, name, value, onChange } = props;
+    const { className, name, value, onChange, text } = props;
 
     return (
-        <input
-            className={`${classes.root}${className ? ` ${className}` : ''}`}
-            type="text"
-            name={name}
-            value={value}
-            onChange={onChange}
-        />
+        // eslint-disable-next-line
+        <label className={`${classes.root}${className ? ` ${className}` : ''}`}>
+            {text}
+            <input className={classes.input} type="text" name={name} value={value} onChange={onChange} />
+        </label>
     );
 };
 

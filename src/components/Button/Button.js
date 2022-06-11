@@ -1,9 +1,11 @@
 import React from 'react';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 import classes from './Button.module.css';
 
 const Button = function (props) {
-    const { className, id, onClick, text } = props;
+    const { className, id, onClick, text, icon } = props;
 
     return (
         <button
@@ -13,6 +15,7 @@ const Button = function (props) {
             onClick={onClick}
         >
             {text}
+            {icon ? <FontAwesomeIcon icon={icon} /> : null}
         </button>
     );
 };
