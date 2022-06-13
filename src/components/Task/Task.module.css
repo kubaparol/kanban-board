@@ -3,7 +3,7 @@
     border-radius: 17px;
     padding: 10px 20px;
     background-color: #FFFFFF;
-    box-shadow: 0 0 10px 2px #a0a3bd;
+    box-shadow: 0 0 10px 1px #a0a3bd;
     overflow: hidden;
 }
 
@@ -51,7 +51,7 @@
     color: #6D77FB;
     font-weight: bold;
     text-align: center;
-    line-height: 23px;
+    line-height: 26px;
 }
 
 .buttons__container {
@@ -76,4 +76,22 @@
 .icon__delete {
     background-color: #FFE5E5;
     color: #f36161;
+}
+
+@media(min-width: 1000px) {
+    .icon__next, .icon__prev {
+        transform: rotate(-90deg);
+    }
+    .icon__delete, .icon__next, .icon__prev {
+        cursor: pointer;
+        transition: 0.2s;
+    }
+    .icon__next:hover, .icon__prev:hover {
+        background-color: #eeb239;
+        color: #FFF5E0     
+    }
+    .icon__delete:hover {
+        background-color: #f36161;
+        color: #FFE5E5;
+    }
 }

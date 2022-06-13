@@ -13,7 +13,7 @@ const Board = function (props) {
 
     return (
         <section className={`${classes.root}${className ? ` ${className}` : ''}`}>
-            <ul>{renderColumns}</ul>
+            <ul className={classes.columns__list}>{renderColumns}</ul>
         </section>
     );
 };

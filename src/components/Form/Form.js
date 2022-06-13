@@ -74,12 +74,15 @@ const Form = function (props) {
 
     return (
         <form onSubmit={addTask} className={`${classes.root}${className ? ` ${className}` : ''}`}>
-            <TextField name="task" value={taskName} onChange={onChangeTaskName} text="Task:" />
-            <span className={classes.alert}>{taskNameAlert}</span>
-            <TextField name="description" value={description} onChange={onChangeDescription} text="Description:" />
-            <span className={classes.alert}>{descriptionAlert}</span>
-            <TextField name="user" value={user} onChange={onChangeUser} text="Your name:" />
-            <span className={classes.alert}>{userAlert}</span>
+            <TextField name="task" value={taskName} onChange={onChangeTaskName} text="Task:">
+                <span className={classes.alert}>{taskNameAlert}</span>
+            </TextField>
+            <TextField name="description" value={description} onChange={onChangeDescription} text="Description:">
+                <span className={classes.alert}>{descriptionAlert}</span>
+            </TextField>
+            <TextField name="user" value={user} onChange={onChangeUser} text="Your name:">
+                <span className={classes.alert}>{userAlert}</span>
+            </TextField>
             <input type="submit" value="Add" className={classes.submit} />
         </form>
     );

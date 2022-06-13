@@ -27,16 +27,16 @@ const Task = function (props) {
             </div>
             <div className={classes.buttons__container}>
                 <Button
-                    id="next"
-                    onClick={(e) => moveTask(e, id, idColumn)}
-                    icon={faArrowDown}
-                    className={classes.icon__next}
-                />
-                <Button
                     id="prev"
                     onClick={(e) => moveTask(e, id, idColumn)}
                     icon={faArrowUp}
                     className={classes.icon__prev}
+                />
+                <Button
+                    id="next"
+                    onClick={(e) => moveTask(e, id, idColumn)}
+                    icon={faArrowDown}
+                    className={classes.icon__next}
                 />
                 <Button id="delete" onClick={() => deleteTask(id)} icon={faTrash} className={classes.icon__delete} />
             </div>
