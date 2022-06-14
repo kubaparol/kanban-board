@@ -6,7 +6,7 @@
 
 ## :mag: Overview
 
-:fire: Click to see live version: [Kanban Board App]()!
+:fire: Click to see live version: [Kanban Board App](https://kubaparol.github.io/kanban-board)!
 
 **Kanban Method** is a methodology for designing, improving and managing workflow. This method allows you to make evolutionary changes in your organization and increase productivity. You can find more information [here](https://kanbanblog.com/explained/).
 
