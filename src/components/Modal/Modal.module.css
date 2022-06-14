@@ -1,0 +1,84 @@
+.background {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.container {
+    background-color: white;
+    width: 70%;
+    height: 30%;
+    border-radius: 15px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.closeBtnContainer {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.closeBtn {
+    border: none;
+    width: 35px;
+    height: 35px;
+    background-color: transparent;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+.text {
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+}
+
+.cancelBtn, .continueBtn {
+    margin: 7px;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.cancelBtn {
+    background-color: #f55656;
+}
+
+.continueBtn {
+    background-color: #69e99e;
+}
+
+@media(min-width: 600px) {
+    .cancelBtn, .continueBtn {
+        margin: 14px;
+    }
+}
+
+@media (min-width: 1000px) {
+    .container {
+        width: 40%;
+    }
+    .text {
+        font-size: 1.2rem;
+    }
+    .cancelBtn, .continueBtn {
+        font-size: 1rem;
+        cursor: pointer;
+        transition: 0.2s;
+        margin: 23px;
+    }
+    .cancelBtn:hover, .continueBtn:hover {
+        transform: scale(1.1);
+    }
+}

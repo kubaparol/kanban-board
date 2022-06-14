@@ -57,7 +57,7 @@ function App() {
         return null;
     };
 
-    const deleteTask = (taskId) => {
+    const confirmDeleteTask = (taskId) => {
         const tasksWithoutDeleted = tasks.filter((task) => task.id !== taskId);
         setTasks(tasksWithoutDeleted);
     };
@@ -74,7 +74,7 @@ function App() {
             </header>
             <section className="kanban">
                 <MoveContext.Provider value={moveTask}>
-                    <DeleteContext.Provider value={deleteTask}>
+                    <DeleteContext.Provider value={confirmDeleteTask}>
                         <Board columns={columns} tasksList={tasks} />
                     </DeleteContext.Provider>
                 </MoveContext.Provider>

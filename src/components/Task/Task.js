@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowDown, faArrowUp, faTrash, faBarsStaggered } from '@fortawesome/free-solid-svg-icons';
@@ -6,9 +6,11 @@ import { faArrowDown, faArrowUp, faTrash, faBarsStaggered } from '@fortawesome/f
 import classes from './Task.module.css';
 
 import Button from '../Button';
+import Modal from '../Modal';
 import { MoveContext, DeleteContext } from '../../context';
 
 const Task = function (props) {
+    const [openModal, setOpenModal] = useState(false);
     const { className, id, taskName, user, description, idColumn } = props;
 
     const moveTask = useContext(MoveContext);
@@ -38,8 +40,14 @@ const Task = function (props) {
                     icon={faArrowDown}
                     className={classes.icon__next}
                 />
-                <Button id="delete" onClick={() => deleteTask(id)} icon={faTrash} className={classes.icon__delete} />
+                <Button
+                    id="delete"
+                    onClick={() => setOpenModal(true)}
+                    icon={faTrash}
+                    className={classes.icon__delete}
+                />
             </div>
+            {openModal && <Modal setState={setOpenModal} onTrue={() => deleteTask(id)} text="Task will be deleted!" />}
         </li>
     );
 };
