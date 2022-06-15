@@ -47,7 +47,7 @@ const Task = function (props) {
                     className={classes.icon__delete}
                 />
             </div>
-            {openModal && <Modal setState={setOpenModal} onTrue={() => deleteTask(id)} text="Task will be deleted!" />}
+            {openModal && <Modal setState={setOpenModal} onTrue={() => deleteTask(id)} text="Task will be delete!" />}
         </li>
     );
 };
