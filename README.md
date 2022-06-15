@@ -1,6 +1,16 @@
 # Kanban Board App
 
-![screen app](./assets/screen-app.png)
+![screen app](./assets/gif-kanban.gif)
+
+&nbsp;
+
+### Contents:
+
+- [Overview](#mag-overview)
+- [Technologies](#bulb-technologies)
+- [Installation](#cd-installation)
+- [Contact](#wave-feel-free-to-contact-me)
+- [Special thanks](#clap-special-thanks)
 
 &nbsp;
 
