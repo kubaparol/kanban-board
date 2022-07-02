@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react';
+import { motion } from 'framer-motion';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowDown, faArrowUp, faTrash, faBarsStaggered } from '@fortawesome/free-solid-svg-icons';
@@ -17,7 +18,12 @@ const Task = function (props) {
     const deleteTask = useContext(DeleteContext);
 
     return (
-        <li className={`${classes.root}${className ? ` ${className}` : ''}`} key={id}>
+        <motion.li
+            className={`${classes.root}${className ? ` ${className}` : ''}`}
+            key={id}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+        >
             <header className={classes.header}>
                 <FontAwesomeIcon icon={faBarsStaggered} />
                 <h3 className={classes.title}>{taskName}</h3>
@@ -48,7 +54,7 @@ const Task = function (props) {
                 />
             </div>
             {openModal && <Modal setState={setOpenModal} onTrue={() => deleteTask(id)} text="Task will be delete!" />}
-        </li>
+        </motion.li>
     );
 };
 
